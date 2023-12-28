@@ -13,13 +13,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Cypress run
+      - name: npm run build:and:test
         # Uses the official Cypress GitHub action https://github.com/cypress-io/github-action
         uses: cypress-io/github-action@v6
         with:
           # Starts web server for E2E tests - replace with your own server invocation
           # https://docs.cypress.io/guides/continuous-integration/introduction#Boot-your-server
-          start: npm start
+          start: npm run build:and:test
           wait-on: 'http://localhost:3000' # Waits for above
           # Records to Cypress Cloud 
           # https://docs.cypress.io/guides/cloud/projects#Set-up-a-project-to-record
