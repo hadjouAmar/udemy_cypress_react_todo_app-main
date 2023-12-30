@@ -1,13 +1,11 @@
 pipeline {
     agent {
-        docker {
-            image 'cypress/included'
-        }
+        docker { image 'cypress/included' }
     }
     stages {
         stage('Download the dependencies') {
             steps {
-                sh "npm install"
+                sh 'npm install'
             }
         }
         stage('Run the test') {
