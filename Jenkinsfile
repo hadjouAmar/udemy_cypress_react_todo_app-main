@@ -1,18 +1,17 @@
-pipeline{
+pipeline {
     agent {
-        docker{
+        docker {
             image 'cypress/included'
-            arg '-u root:root'
+            args '-u root:root'
         }
     }
-
-    stages{
-        stage('dowloand the dependecies'){
+    stages {
+        stage('Download the dependencies') {
             steps {
                 sh "npm install"
             }
         }
-        stage('run the test'){
+        stage('Run the test') {
             steps {
                 sh "npx cypress run"
             }
