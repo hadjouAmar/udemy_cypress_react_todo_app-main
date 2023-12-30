@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker { image 'cypress/included' }
+        any { image 'cypress/included' args '-u root:root' } 
     }
     stages {
         stage('Download the dependencies') {
